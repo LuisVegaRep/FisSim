@@ -1,0 +1,14 @@
+body {
+    background: #F5F5DC;
+}
+
+h1.one {
+    color: #EEEEEE;
+}
+
+#canv {
+    border: 2px solid #eaeaea;
+    display: block;
+    margin: 0 auto;
+    background: #ffffff;
+}

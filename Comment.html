@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<!---30 tutoriales despues........ ----->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Comentarios</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script type="text/javascript">
+        let stName = sessionStorage.getItem("stName");
+        let stPass = sessionStorage.getItem("stPass");
+        let cComm;
+
+        function commentBox() {
+            let cComm = document.getElementById("comm").value;
+            let cPass = document.getElementById("pass").value;
+            
+            if (cComm == "" && cPass == "") {
+                 alert("Introduzca la informacion solicitada");
+            }
+            else if (cComm == "") {
+                alert("Introduzca un comentario")
+            }
+            else if (cPass == "") {
+                alert("Introduzca una contraseña");
+            }
+            else {
+                if (stPass == cPass) {
+                    mail()
+                }
+                else {
+                    alert("Contraseña incorrecta")
+                }
+            }
+            
+        }
+
+        function mail() {
+            Email.send({
+                    Host: "smtp.gmail.com",
+                    Username: "physhost01@gmail.com",
+                    Password: "ContraSegura123",
+                    To: 'tlogb82828@gmail.com',
+                    From: "physhost01@gmail.com",
+                    Subject: "Comentario de la página",
+                    Body: stName + " dice lo siguiente: " + cComm,
+                }).then(
+                    alert("Correo enviado de manera exitosa")
+                );
+        }
+
+    </script>
+</head>
+
+<body style="background-color: #F5F5DC">
+<nav class="navbar navbar-light navbar-expand-md">
+    <div class="container-fluid"><a class="navbar-brand" href="Sim.html">&larr; Página principal</a>
+        <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse"
+             id="navcol-1">
+            <ul class="nav navbar-nav">
+                <li class="nav-item" role="presentation"><a class="nav-link active" href="https://es-la.facebook.com/">Facebook</a>
+                </li>
+                <li class="nav-item" role="presentation"><a class="nav-link active" href="https://www.instagram.com/">Instagram</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container">
+    <div class="col-md-6 pane">
+        <div class="col-md-4">
+            <div class="alert alert-light" style="background-color: #348017; width: 300px">
+                <h4 style="color: white">Comentarios</h4>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <form>
+                <div class="form-group">
+                    <label>Contraseña</label>
+                    <input class="form-control" type="text" id="pass">
+                </div>
+                <div class="form-group">
+                    <label>Comentario</label>
+                    <textarea id="comm" class="form-control"></textarea></label>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="commentBox()" style="background-color: #348017">
+                    Enviar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>

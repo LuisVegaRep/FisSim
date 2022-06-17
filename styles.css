@@ -1,0 +1,36 @@
+.text-center {
+    color: #348017;
+}
+
+.btn-success {
+    background-color: #348017;
+}
+
+body {
+    background-color: #F5F5DC;
+}
+
+.form-label,
+.form-check-label {
+    color: black;
+}
+
+.aprobado {
+    margin-top: 1rem;
+    background-color: green;
+    text-align: center;
+    padding: 1rem;
+    text-transform: uppercase;
+}
+
+.error {
+    margin-top: 1rem;
+    background-color: rgb(209, 148, 148);
+    text-align: center;
+    padding: 1rem;
+    text-transform: uppercase;
+}
+
+input {
+    text-transform: lowercase;
+}

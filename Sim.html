@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Simulación</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="design.css">
+    <script type="text/javascript">
+        function page(i) {
+            switch (i) {
+                case 1:
+                    location.href = 'Comment.html';
+                    break;
+                case 2:
+                    location.href = 'Info.html';
+                    break;
+            }
+        }
+    </script>
+</head>
+<body>
+<h2><a href=Index.html>&larr; SALIR</a></h2>
+<canvas id="canv" tabindex=0 width="640px" height="480px"></canvas>
+<div style="text-align: center;">Pulsa en el cuadro y utiliza las flechas para moverte</div>
+<br>
+<center><input type="button" onclick="page(1)" value="Comentarios y sugerencias"></center>
+<br>
+<center><input type="button" onclick="page(2)" value="Informacion sobre fisica"></center>
+<script src="Script.js"></script>
+</body>
+</html>
